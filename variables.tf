@@ -28,7 +28,6 @@ variable datacenter {
 variable "instance_count" {
   description = "Number of instances"
   type = number
-  default = 3
 }
 // =====================================================
 
