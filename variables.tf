@@ -1,3 +1,37 @@
+//
+//
+//
+variable "iaas_classic_username" {
+  description = "Classic IaaS username."
+  type        = string
+  default     = ""
+}
+
+variable "iaas_classic_api_key" {
+  description = "Classic IaaS API Key."
+  type        = string
+  default     = ""
+}
+
+variable "ssh_key" {
+  description = "SSH key to add to instance."
+  type        = string
+  default     = ""
+}
+
+variable datacenter {
+  description = "Default datacenter for LBaaS and web instances."
+  type        = string
+  default     = ""
+}
+
+variable "instance_count" {
+  description = "Number of instances"
+  type = number
+  default = 3
+}
+// =====================================================
+
 variable "minimum_vm_count" {
     default = 3
     description = "Minumum VMs to be maintained with Load balancer" 
@@ -8,24 +42,14 @@ variable "namespace" {
     description = "Name space where cloud function is defined"
 }
 
-variable "package_name" {
-    default = "defaultpackage"
-    description = "Package name of the cloud function"
-}
-
 variable "action_name" {
     default = "autoscaleaction"
     description = "Name of the action"
 }
 
 variable "api_key" {
-    default = "<add-your-api-key-here>"
+    default = ""
     description = "API Key to perform the schematics operations"
-}
-
-variable "workspace_id" {
-    default = "vms_and_alb-ebb3291a-62d7-42"
-    description = "Target schematics workspace ID"
 }
 
 variable "vm_count"{
@@ -43,7 +67,7 @@ variable "sysdig_monitor_url" {
 
 variable "sysdig_api_token"{
     description = "API Token from Sysdig monitoring UI"
-    default = "<api-token-for-sysdig-monitoring>"
+    default = ""
 }
 
 variable "scale_up_alert_name"{

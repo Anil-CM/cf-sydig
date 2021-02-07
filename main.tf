@@ -1,11 +1,20 @@
+
+module "vms_and_lb"{
+  source = "github.com/Anil-CM/IBMCloud-Terraform-Examples/ClassicVSI-LBaaS"
+  iaas_classic_username = var.iaas_classic_username
+  iaas_classic_api_key = var.iaas_classic_api_key
+  ssh_key = var.ssh_key
+  datacenter = var.datacenter
+  instance_count = var.instance_count
+}
+
 module "cloud_function" {
   source = "github.com/Anil-CM/CF-Autoscale"
   minimum_vm_count = var.minimum_vm_count
   namespace = var.namespace
-  package_name = var.package_name
   action_name = var.action_name
   api_key = var.api_key
-  workspace_id = var.workspace_id
+  workspace_id = module.vms_and_lb.workspace_id
   vm_count = var.vm_count
 }
 
