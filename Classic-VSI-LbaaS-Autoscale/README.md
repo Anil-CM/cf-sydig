@@ -1,6 +1,8 @@
 # Classic VSI with Loadbalancer Autoscale behaviour
 
-This module desploys a set of VSIs on classic infrastructure with a load balancer attached and a cloud function action to handle the autoscaling of VSIs. The module configures the sysdig service with alerts and notifications for the autoscale feature. This module scale the VSIs based on the Loadbalancer's `Numer of active connections` metric.  
+This module desploys a set of VSIs on classic infrastructure with a load balancer attached and a cloud function action to handle the autoscaling of VSIs. The module configures the sysdig service with alerts and notifications for the autoscale feature. This module scale the VSIs based on the Loadbalancer's `Numer of active connections` metric.
+
+![alt text](https://github.com/Anil-CM/schematics-solutions/blob/main/Classic-VSI-LbaaS-Autoscale/VSI-Sysdig-Automation.png?raw=true)
 
 ## Requirements
 
@@ -15,6 +17,14 @@ This module desploys a set of VSIs on classic infrastructure with a load balance
 |------|---------|
 | ibm | >= 1.18.0 |
 | sysdig | >= 0.5.7 |
+
+## Modules
+| Name | Description | GIT Repo |
+|------|-------------|----------|
+| `vms_and_lb` | Module responisble for creation of VSIs and Loadbalancer | `https://github.com/Anil-CM/IBMCloud-Terraform-Examples/tree/master/ClassicVSI-LBaaS`|
+| `cloud_function` | Module responisble for cloud function action creation and configuration | `https://github.com/Anil-CM/CF-Autoscale` |
+| `sysdig_monitoring_config` | Module responsbile for sysdig monitoring configurations | `https://github.com/Anil-CM/sysdig-conf` |
+
 
 ## Inputs
 

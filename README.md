@@ -1,6 +1,6 @@
 # schematics-solutions
 
-Collection of `IAC` based solutions using IBM-Cloud schematics service and Terraform provider for the IBM Cloud.
+Collection of `IAC` based reusable solutions using IBM-Cloud schematics service and Terraform provider for the IBM Cloud.
 Following are the solutions available:
 
 | Name | Description | IBM-Cloud services used |
